@@ -3,19 +3,25 @@
 Python Practical Template
 Keegan Crankshaw
 Readjust this Docstring as follows:
-Names: <names>
-Student Number: <studnum>
-Prac: <Prac Num>
-Date: <dd/mm/yyyy>
+Names: <Devon Bloch>
+Student Number: <BLCDEV001>
+Prac: <1>
+Date: <27/07/2019>
 """
 
 # import Relevant Librares
 import RPi.GPIO as GPIO
-GPIO.setmode(GPIO.BOARD)
-GPIO.setup(11, GPIO.OUT
+import time
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(17, GPIO.OUT, initial=GPIO.LOW)
 # Logic that you write
 def main():
-	
+ 	for i in range(0,10):	
+		GPIO.output(17, GPIO.HIGH)
+		time.sleep(0.5)
+		GPIO.output(17, GPIO.LOW)
+		time.sleep(0.5)
+	GPIO.cleanup()		
 
 
 # Only run the functions if 
